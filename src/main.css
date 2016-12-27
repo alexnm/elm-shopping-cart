@@ -1,12 +1,35 @@
 body {
-  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
-  font-size: 30px;
   margin: 0;
-  text-align: center;
-  color: #293c4b;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-img {
-  margin: 20px 0;
-  max-width: 200px;
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+.navigation li {
+  display: block;
+  float: left;
+  margin-right: 2px;
+}
+
+.navigation a {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 10px 10px 0 0;
+}
+
+.navigation a:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.tab-content {
+  clear: both;
+  border: 1px solid #ddd;
+  padding: 20px;
 }

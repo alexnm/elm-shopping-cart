@@ -1,5 +1,6 @@
 module Main exposing (..)
 
+import Types exposing (..)
 import App exposing (..)
 import Html exposing (programWithFlags)
 

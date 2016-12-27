@@ -1,35 +1,35 @@
 module App exposing (..)
 
-import Html exposing (Html, text, div, img)
-import Html.Attributes exposing (src)
+import Html exposing (Html)
+import View
+import Types exposing (..)
 
 
-type alias Model =
-    { message : String
-    , logo : String
+initialModel : Model
+initialModel =
+    { tabs = [ "List", "Add", "What?" ]
+    , currentTabIndex = 0
     }
 
 
 init : String -> ( Model, Cmd Msg )
 init path =
-    ( { message = "Your Elm App is working!", logo = path }, Cmd.none )
-
-
-type Msg
-    = NoOp
+    ( initialModel, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        NoOp ->
+            ( model, Cmd.none )
+
+        ChangeTab x ->
+            ( { model | currentTabIndex = x }, Cmd.none )
 
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ img [ src model.logo ] []
-        , div [] [ text model.message ]
-        ]
+    View.render model
 
 
 subscriptions : Model -> Sub Msg
